@@ -14,16 +14,25 @@ library(readxl)
 library(wordcloud)
 library(RColorBrewer)
 library(ggwordcloud)
+library(ggplot2)
+
+# Sinai-inspired palette
+sinai_colors <- c("#007BC7",  # Sinai Blue
+  "#C6007E",  # Sinai Magenta
+  "#6C2DC7",  # Purple/Violet
+  "#00B1B0",  # Teal
+  "#5A5A5A")   # Neutral gray for balance (optional)
 
 ```
 
 
-```{r obsbot}
+```{r obsbot, echo=FALSE}
 obsbot_df <- read_excel("/Users/debigonzalez/Downloads/obsbot_descriptor_frequencies.xlsx")
 
 
-ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions)) +
+ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions, color = sample(Descriptor))) +
   geom_text_wordcloud_area() +
   scale_size_area(max_size = 20) +
+  scale_color_manual(values = rep(sinai_colors, length.out = nrow(obsbot_df))) +
   theme_minimal()
 ```
