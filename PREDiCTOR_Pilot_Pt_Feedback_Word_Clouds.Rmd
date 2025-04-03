@@ -36,3 +36,15 @@ ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions, color = s
   scale_color_manual(values = rep(sinai_colors, length.out = nrow(obsbot_df))) +
   theme_minimal()
 ```
+
+```{r iphone, echo=FALSE}
+iphone_df <- read_excel("/Users/debigonzalez/Downloads/single_iphone_descriptors.xlsx")
+
+ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 20) +
+  scale_color_manual(values = rep(sinai_colors, length.out = nrow(iphone_df))) +
+  theme_minimal()
+  
+```
+
