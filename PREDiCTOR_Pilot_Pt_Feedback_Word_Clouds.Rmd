@@ -1,0 +1,29 @@
+---
+title: "PREDiCTOR Pilot Study: Participants' Qualitative Feedback Word Clouds"
+author: "Debi Gonzalez"
+date: "2025-04-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#Setting up libraries
+library(tidyverse)
+library(readxl)
+library(wordcloud)
+library(RColorBrewer)
+library(ggwordcloud)
+
+```
+
+
+```{r obsbot}
+obsbot_df <- read_excel("/Users/debigonzalez/Downloads/obsbot_descriptor_frequencies.xlsx")
+
+
+ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions)) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 20) +
+  theme_minimal()
+```
