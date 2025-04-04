@@ -63,9 +63,9 @@ ggplot(dual_iphone_df, aes(label = descriptors, size = approximate_frequency, co
 
 ## Logitech Setup Feedback
 ```{r logi, echo=FALSE}
-logi_df <- read_excel("/Users/debigonzalez/Downloads/logi_descriptors.xlsx")
+logi_df <- read_excel("/Users/debigonzalez/Downloads/logitech_descriptors.xlsx")
 
-ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
+ggplot(logi_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
   geom_text_wordcloud_area() +
   scale_size_area(max_size = 20) +
   scale_color_manual(values = rep(sinai_colors, length.out = nrow(logi_df))) +
