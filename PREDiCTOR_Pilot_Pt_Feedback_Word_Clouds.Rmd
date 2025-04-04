@@ -25,7 +25,7 @@ sinai_colors <- c("#007BC7",  # Sinai Blue
 
 ```
 
-
+## Obsbot Setup Feedback
 ```{r obsbot, echo=FALSE}
 obsbot_df <- read_excel("/Users/debigonzalez/Downloads/obsbot_descriptor_frequencies.xlsx")
 
@@ -37,6 +37,7 @@ ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions, color = s
   theme_minimal()
 ```
 
+## iPhone Setup Feedback
 ```{r iphone, echo=FALSE}
 iphone_df <- read_excel("/Users/debigonzalez/Downloads/single_iphone_descriptors.xlsx")
 
@@ -48,3 +49,38 @@ ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color =
   
 ```
 
+## Dual iPhone Setup Feedback
+```{r dual iphone, echo=FALSE}
+dual_iphone_df <- read_excel("/Users/debigonzalez/Downloads/dual_iphone_descriptors.xlsx")
+
+ggplot(dual_iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 20) +
+  scale_color_manual(values = rep(sinai_colors, length.out = nrow(dual_iphone_df))) +
+  theme_minimal()
+  
+```
+
+## Logitech Setup Feedback
+```{r logi, echo=FALSE}
+logi_df <- read_excel("/Users/debigonzalez/Downloads/logi_descriptors.xlsx")
+
+ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 20) +
+  scale_color_manual(values = rep(sinai_colors, length.out = nrow(logi_df))) +
+  theme_minimal()
+  
+```
+
+## 360 Camera Setup Feedback
+```{r cam360, echo=FALSE}
+cam360_df <- read_excel("/Users/debigonzalez/Downloads/cam360_descriptors.xlsx")
+
+ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
+  geom_text_wordcloud_area() +
+  scale_size_area(max_size = 20) +
+  scale_color_manual(values = rep(sinai_colors, length.out = nrow(cam360_df))) +
+  theme_minimal()
+  
+```
