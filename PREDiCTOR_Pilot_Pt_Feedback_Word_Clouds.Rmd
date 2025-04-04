@@ -25,9 +25,9 @@ sinai_colors <- c("#007BC7",  # Sinai Blue
 
 ```
 
-## Obsbot Setup Feedback
+### Obsbot Setup Feedback
 ```{r obsbot, echo=FALSE}
-obsbot_df <- read_excel("/Users/debigonzalez/Downloads/obsbot_descriptor_frequencies.xlsx")
+obsbot_df <- read_excel("/Users/debigonzalez/Documents/R_Projects/Predictor_Pilot_Qual/obsbot_descriptor_frequencies.xlsx")
 
 
 ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions, color = sample(Descriptor))) +
@@ -37,9 +37,9 @@ ggplot(obsbot_df, aes(label = Descriptor, size = Approximate_Mentions, color = s
   theme_minimal()
 ```
 
-## iPhone Setup Feedback
+### iPhone Setup Feedback
 ```{r iphone, echo=FALSE}
-iphone_df <- read_excel("/Users/debigonzalez/Downloads/single_iphone_descriptors.xlsx")
+iphone_df <- read_excel("/Users/debigonzalez/Documents/R_Projects/Predictor_Pilot_Qual/single_iphone_descriptors.xlsx")
 
 ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
   geom_text_wordcloud_area() +
@@ -49,9 +49,9 @@ ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color =
   
 ```
 
-## Dual iPhone Setup Feedback
+### Dual iPhone Setup Feedback
 ```{r dual iphone, echo=FALSE}
-dual_iphone_df <- read_excel("/Users/debigonzalez/Downloads/dual_iphone_descriptors.xlsx")
+dual_iphone_df <- read_excel("/Users/debigonzalez/Documents/R_Projects/Predictor_Pilot_Qual/dual_iphone_descriptors.xlsx")
 
 ggplot(dual_iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
   geom_text_wordcloud_area() +
@@ -61,9 +61,9 @@ ggplot(dual_iphone_df, aes(label = descriptors, size = approximate_frequency, co
   
 ```
 
-## Logitech Setup Feedback
+### Logitech Setup Feedback
 ```{r logi, echo=FALSE}
-logi_df <- read_excel("/Users/debigonzalez/Downloads/logitech_descriptors.xlsx")
+logi_df <- read_excel("/Users/debigonzalez/Documents/R_Projects/Predictor_Pilot_Qual/logitech_descriptors.xlsx")
 
 ggplot(logi_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
   geom_text_wordcloud_area() +
@@ -73,11 +73,11 @@ ggplot(logi_df, aes(label = descriptors, size = approximate_frequency, color = s
   
 ```
 
-## 360 Camera Setup Feedback
+### 360 Camera Setup Feedback
 ```{r cam360, echo=FALSE}
-cam360_df <- read_excel("/Users/debigonzalez/Downloads/cam360_descriptors.xlsx")
+cam360_df <- read_excel("/Users/debigonzalez/Documents/R_Projects/Predictor_Pilot_Qual/camera360_descriptors.xlsx")
 
-ggplot(iphone_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
+ggplot(cam360_df, aes(label = descriptors, size = approximate_frequency, color = sample(descriptors))) +
   geom_text_wordcloud_area() +
   scale_size_area(max_size = 20) +
   scale_color_manual(values = rep(sinai_colors, length.out = nrow(cam360_df))) +
